@@ -436,12 +436,12 @@ void secondBlockMutationFour() {
 //thirdBlock Mutation Series
 
 void thirdBlockMutation() {
-    messageBlockThree[0] = messageBlockThree[0] & messageBlockThree[23];
+    messageBlockThree[0] = messageBlockThree[5] & messageBlockThree[23];
     messageBlockThree[1] = messageBlockThree[1] & messageBlockThree[38];
     messageBlockThree[2] = messageBlockThree[2] | messageBlockThree[55];
     messageBlockThree[3] = messageBlockThree[3] | messageBlockThree[111];
     messageBlockThree[4] = messageBlockThree[4] ^ messageBlockThree[116];
-    messageBlockThree[5] = messageBlockThree[5] | messageBlockThree[125];
+    messageBlockThree[5] = messageBlockThree[0] | messageBlockThree[125];
     messageBlockThree[6] = messageBlockThree[6] ^ messageBlockThree[110];
     messageBlockThree[7] = messageBlockThree[7] | messageBlockThree[9];
     messageBlockThree[8] = messageBlockThree[8] | messageBlockThree[59];
@@ -767,14 +767,15 @@ void vectorToString() {
     //Convert binary to char
     stringstream sstream(stringMessage);
     while(sstream.good()){
-        bitset<8> bits;
-        sstream >> bits;
-        char c = char(bits.to_ulong());
+        bitset<8> messageBytes;
+        sstream >> messageBytes;
+        char c = char(messageBytes.to_ulong());
         completeMessageDigest += c;
     };
     //Remove leading uniform characters
     completeMessageDigest.erase(0,7);
-    //Need to clear white space and formating
+    //Clear white space
+    completeMessageDigest.erase(remove_if(completeMessageDigest.begin(), completeMessageDigest.end(), ::isspace), completeMessageDigest.end());
     cout << "binaryStringMessageDigest:" << endl << completeMessageDigest << endl;
     
 };
