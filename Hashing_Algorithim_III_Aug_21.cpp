@@ -215,7 +215,6 @@ void firstBlockMutationTwo() {
     messageBlockOne[62] = messageBlockOne[62] & messageBlockOne[33];
     messageBlockOne[63] = messageBlockOne[63] ^ messageBlockOne[18];
     messageBlockOne[64] = messageBlockOne[64] & messageBlockOne[4];
-    
 };
 
 void firstBlockMutationThree() {
@@ -395,7 +394,6 @@ void secondBlockMutationThree() {
     messageBlockTwo[95] = messageBlockTwo[95] & messageBlockTwo[85];
     messageBlockTwo[96] = messageBlockTwo[96] | messageBlockTwo[63];
     messageBlockTwo[97] = messageBlockTwo[97] & messageBlockTwo[10];
-    
 };
 
 void secondBlockMutationFour() {
@@ -538,8 +536,7 @@ void thirdBlockMutationThree() {
     messageBlockThree[94] = messageBlockThree[94] | messageBlockThree[79];
     messageBlockThree[95] = messageBlockThree[95] | messageBlockThree[3];
     messageBlockThree[96] = messageBlockThree[96] & messageBlockThree[49];
-    messageBlockThree[97] = messageBlockThree[97] & messageBlockThree[41];
-    
+    messageBlockThree[97] = messageBlockThree[97] & messageBlockThree[41];  
 };
 
 void thirdBlockMutationFour() {
@@ -645,7 +642,6 @@ void forthBlockMutationTwo() {
     messageBlockFour[62] = messageBlockFour[62] | messageBlockFour[53];
     messageBlockFour[63] = messageBlockFour[63] & messageBlockFour[71];
     messageBlockFour[64] = messageBlockFour[64] ^ messageBlockFour[16];
-    
 };
 
 void forthBlockMutationThree() {
@@ -681,8 +677,7 @@ void forthBlockMutationThree() {
     messageBlockFour[94] = messageBlockFour[94] ^ messageBlockFour[20];
     messageBlockFour[95] = messageBlockFour[95] & messageBlockFour[80];
     messageBlockFour[96] = messageBlockFour[96] ^ messageBlockFour[78];
-    messageBlockFour[97] = messageBlockFour[97] | messageBlockFour[40];
-    
+    messageBlockFour[97] = messageBlockFour[97] | messageBlockFour[40];  
 };
 
 void forthBlockMutationFour() {
