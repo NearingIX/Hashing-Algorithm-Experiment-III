@@ -777,7 +777,6 @@ void vectorToString() {
     //Clear white space
     completeMessageDigest.erase(remove_if(completeMessageDigest.begin(), completeMessageDigest.end(), ::isspace), completeMessageDigest.end());
     cout << "binaryStringMessageDigest:" << endl << completeMessageDigest << endl;
-    
 };
 };
 
