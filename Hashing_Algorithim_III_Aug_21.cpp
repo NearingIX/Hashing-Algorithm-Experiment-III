@@ -64,6 +64,9 @@ class mainVector {
     vector<bitset<8> > messageBlockTwo;
     vector<bitset<8> > messageBlockThree;
     vector<bitset<8> > messageBlockFour;
+    stringstream sstream;
+    string completeMessageDigest;
+    stringstream messageStream;
 
     public:
         mainVector() {
@@ -76,6 +79,9 @@ class mainVector {
         vector<bitset<8> > messageBlockTwo;
         vector<bitset<8> > messageBlockThree;
         vector<bitset<8> > messageBlockFour;
+        stringstream sstream;
+        string completeMessageDigest;
+        stringstream messageStream;
         }
     
     void padmessageDigest() {
@@ -250,8 +256,7 @@ void firstBlockMutationThree() {
     messageBlockOne[94] = messageBlockOne[94] & messageBlockOne[101];
     messageBlockOne[95] = messageBlockOne[95] ^ messageBlockOne[86];
     messageBlockOne[96] = messageBlockOne[96] ^ messageBlockOne[66];
-    messageBlockOne[97] = messageBlockOne[97] | messageBlockOne[32];
-    
+    messageBlockOne[97] = messageBlockOne[97] | messageBlockOne[32]; 
 };
 
 void firstBlockMutationFour() {
@@ -357,7 +362,6 @@ void secondBlockMutationTwo() {
     messageBlockTwo[62] = messageBlockTwo[62] | messageBlockTwo[91];
     messageBlockTwo[63] = messageBlockTwo[63] & messageBlockTwo[84];
     messageBlockTwo[64] = messageBlockTwo[64] & messageBlockTwo[60];
-    
 };
 
 void secondBlockMutationThree() {
@@ -500,7 +504,6 @@ void thirdBlockMutationTwo() {
     messageBlockThree[62] = messageBlockThree[62] ^ messageBlockThree[89];
     messageBlockThree[63] = messageBlockThree[63] | messageBlockThree[36];
     messageBlockThree[64] = messageBlockThree[64] ^ messageBlockThree[2];
-    
 };
 
 void thirdBlockMutationThree() {
@@ -536,7 +539,7 @@ void thirdBlockMutationThree() {
     messageBlockThree[94] = messageBlockThree[94] | messageBlockThree[79];
     messageBlockThree[95] = messageBlockThree[95] | messageBlockThree[3];
     messageBlockThree[96] = messageBlockThree[96] & messageBlockThree[49];
-    messageBlockThree[97] = messageBlockThree[97] & messageBlockThree[41];  
+    messageBlockThree[97] = messageBlockThree[97] & messageBlockThree[41]; 
 };
 
 void thirdBlockMutationFour() {
@@ -677,7 +680,7 @@ void forthBlockMutationThree() {
     messageBlockFour[94] = messageBlockFour[94] ^ messageBlockFour[20];
     messageBlockFour[95] = messageBlockFour[95] & messageBlockFour[80];
     messageBlockFour[96] = messageBlockFour[96] ^ messageBlockFour[78];
-    messageBlockFour[97] = messageBlockFour[97] | messageBlockFour[40];  
+    messageBlockFour[97] = messageBlockFour[97] | messageBlockFour[40];
 };
 
 void forthBlockMutationFour() {
@@ -756,7 +759,6 @@ for (auto i: messageDigest) {
 //Convert finalMessageDigest vector to string
 //Maybe break into two functions
 void vectorToString() {
-    stringstream messageStream;
     for(size_t i=0; i < finalMessageDigest.size(); ++i){
         if (i != 0)
         messageStream << finalMessageDigest[i];
@@ -764,7 +766,6 @@ void vectorToString() {
     string stringMessage = messageStream.str();
     //Convert binary to char
     stringstream sstream(stringMessage);
-    string completeMessageDigest;
     while(sstream.good()){
         bitset<8> bits;
         sstream >> bits;
