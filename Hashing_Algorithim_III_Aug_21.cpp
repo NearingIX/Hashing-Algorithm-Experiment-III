@@ -110,7 +110,7 @@ void binaryConverter(string conversionInput) {
     printmessageDigest();
 };
 
-void secondMutation(){
+void firstMutation(){
 for (size_t index = 0; index < messageDigest.size(); ++ index) {
     //Every nth element in the vector is changed
     vector<bitset<8>>::iterator begin = messageDigest.begin() + index;
@@ -153,7 +153,7 @@ messageBlockFour = vector<bitset<8> > (secondBlock.begin() + secondBlock.size() 
 
 //firstBlock Mutation Series
 void firstBlockMutation() {
-    messageBlockOne[0] = messageBlockOne[0] ^ messageBlockOne[8];
+    messageBlockOne[0] = messageBlockOne[10] ^ messageBlockOne[8];
     messageBlockOne[1] = messageBlockOne[1] | messageBlockOne[72];
     messageBlockOne[2] = messageBlockOne[2] & messageBlockOne[41];
     messageBlockOne[3] = messageBlockOne[3] ^ messageBlockOne[58];
@@ -162,8 +162,8 @@ void firstBlockMutation() {
     messageBlockOne[6] = messageBlockOne[6] & messageBlockOne[28];
     messageBlockOne[7] = messageBlockOne[7] ^ messageBlockOne[76];
     messageBlockOne[8] = messageBlockOne[8] | messageBlockOne[82];
-    messageBlockOne[9] = messageBlockOne[9] ^ messageBlockOne[91];
-    messageBlockOne[10] = messageBlockOne[10] ^ messageBlockOne[16];
+    messageBlockOne[9] = messageBlockOne[29] ^ messageBlockOne[91];
+    messageBlockOne[10] = messageBlockOne[0] ^ messageBlockOne[16];
     messageBlockOne[11] = messageBlockOne[11] & messageBlockOne[71];
     messageBlockOne[12] = messageBlockOne[12] | messageBlockOne[81];
     messageBlockOne[13] = messageBlockOne[13] & messageBlockOne[108];
@@ -182,7 +182,7 @@ void firstBlockMutation() {
     messageBlockOne[26] = messageBlockOne[26] ^ messageBlockOne[30];
     messageBlockOne[27] = messageBlockOne[27] ^ messageBlockOne[119];
     messageBlockOne[28] = messageBlockOne[28] | messageBlockOne[122];
-    messageBlockOne[29] = messageBlockOne[29] | messageBlockOne[118];
+    messageBlockOne[29] = messageBlockOne[9] | messageBlockOne[118];
     messageBlockOne[30] = messageBlockOne[30] & messageBlockOne[92];
     messageBlockOne[31] = messageBlockOne[31] & messageBlockOne[57];
 };
@@ -756,9 +756,8 @@ for (auto i: messageDigest) {
 };
 };
 
-//Convert finalMessageDigest vector to string
-//Maybe break into two functions
 void vectorToString() {
+    //Convert finalMessageDigest vector to string
     for(size_t i=0; i < finalMessageDigest.size(); ++i){
         if (i != 0)
         messageStream << finalMessageDigest[i];
@@ -795,9 +794,9 @@ int main() {
     newVector.reversemessageDigest();
     newVector.messageDigestSize();
     newVector.messageDigestTrim();
-    newVector.secondMutation();
+    newVector.firstMutation();
     newVector.messageDigestTrim();
-    cout << endl << "Second Mutation: " << endl;
+    cout << "Second Mutation: " << endl;
     newVector.printmessageDigest();
     newVector.divideMessageDigest();
     newVector.firstBlockMutation();
