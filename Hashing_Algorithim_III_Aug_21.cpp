@@ -762,9 +762,10 @@ concatenateSecondBlock.reserve(messageBlockThree.size() + messageBlockFour.size(
 concatenateSecondBlock.insert(concatenateSecondBlock.end(), messageBlockThree.begin(), messageBlockThree.end());
 concatenateSecondBlock.insert(concatenateSecondBlock.end(), messageBlockFour.begin(), messageBlockFour.end());
 
-finalMessageDigest.reserve(concatenateFirstBlock.size() + concatenateSecondBlock.size());
-finalMessageDigest.insert(finalMessageDigest.end(), concatenateFirstBlock.begin(), concatenateFirstBlock.end());
+//Concate second block first to further change message index
+finalMessageDigest.reserve(concatenateSecondBlock.size() + concatenateFirstBlock.size());
 finalMessageDigest.insert(finalMessageDigest.end(), concatenateSecondBlock.begin(), concatenateSecondBlock.end());
+finalMessageDigest.insert(finalMessageDigest.end(), concatenateFirstBlock.begin(), concatenateFirstBlock.end());
 };
 
 //Convert any leading ones to zeroes
