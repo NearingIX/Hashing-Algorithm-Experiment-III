@@ -155,7 +155,7 @@ messageBlockFour = vector<bitset<8> > (secondBlock.begin() + secondBlock.size() 
 };
 
 //firstBlock Mutation Series
-void firstBlockMutation() {
+void firstBlockMutationOne() {
     messageBlockOne[0] = messageBlockOne[29] ^ messageBlockOne[8];
     messageBlockOne[1] = messageBlockOne[13] | messageBlockOne[72];
     messageBlockOne[2] = messageBlockOne[68] & messageBlockOne[41];
@@ -172,6 +172,9 @@ void firstBlockMutation() {
     messageBlockOne[13] = messageBlockOne[113] & messageBlockOne[108];
     messageBlockOne[14] = messageBlockOne[28] ^ messageBlockOne[52];
     messageBlockOne[15] = messageBlockOne[67] | messageBlockOne[26];
+    };
+
+void firstBlockMutationTwo() {
     messageBlockOne[16] = messageBlockOne[82] ^ messageBlockOne[35];
     messageBlockOne[17] = messageBlockOne[119] & messageBlockOne[74];
     messageBlockOne[18] = messageBlockOne[120] ^ messageBlockOne[98];
@@ -190,7 +193,7 @@ void firstBlockMutation() {
     messageBlockOne[31] = messageBlockOne[48] & messageBlockOne[57];
 };
 
-void firstBlockMutationTwo() {
+void firstBlockMutationThree() {
     messageBlockOne[32] = messageBlockOne[2] | messageBlockOne[46];
     messageBlockOne[33] = messageBlockOne[27] | messageBlockOne[34];
     messageBlockOne[34] = messageBlockOne[118] & messageBlockOne[7];
@@ -208,6 +211,9 @@ void firstBlockMutationTwo() {
     messageBlockOne[46] = messageBlockOne[81] ^ messageBlockOne[48];
     messageBlockOne[47] = messageBlockOne[97] & messageBlockOne[100];
     messageBlockOne[48] = messageBlockOne[32] ^ messageBlockOne[53];
+};
+
+void firstBlockMutationFour() {
     messageBlockOne[49] = messageBlockOne[26] | messageBlockOne[84];
     messageBlockOne[50] = messageBlockOne[46] | messageBlockOne[17];
     messageBlockOne[51] = messageBlockOne[101] ^ messageBlockOne[5];
@@ -224,10 +230,10 @@ void firstBlockMutationTwo() {
     messageBlockOne[62] = messageBlockOne[58] & messageBlockOne[33];
     messageBlockOne[63] = messageBlockOne[12] ^ messageBlockOne[18];
     messageBlockOne[64] = messageBlockOne[8] & messageBlockOne[4];
-    reverse(messageBlockOne.begin(), messageBlockOne.end());
+    
 };
 
-void firstBlockMutationThree() {
+void firstBlockMutationFive() {
     messageBlockOne[65] = messageBlockOne[25] | messageBlockOne[70];
     messageBlockOne[66] = messageBlockOne[86] & messageBlockOne[69];
     messageBlockOne[67] = messageBlockOne[52] & messageBlockOne[93];
@@ -245,6 +251,9 @@ void firstBlockMutationThree() {
     messageBlockOne[79] = messageBlockOne[123] ^ messageBlockOne[113];
     messageBlockOne[80] = messageBlockOne[22] ^ messageBlockOne[23];
     messageBlockOne[81] = messageBlockOne[114] | messageBlockOne[25];
+};
+
+void firstBlockMutationSix() {
     messageBlockOne[82] = messageBlockOne[37] | messageBlockOne[63];
     messageBlockOne[83] = messageBlockOne[50] & messageBlockOne[49];
     messageBlockOne[84] = messageBlockOne[87] ^ messageBlockOne[85];
@@ -263,7 +272,7 @@ void firstBlockMutationThree() {
     messageBlockOne[97] = messageBlockOne[18] | messageBlockOne[32]; 
 };
 
-void firstBlockMutationFour() {
+void firstBlockMutationSeven() {
     messageBlockOne[98] = messageBlockOne[24] ^ messageBlockOne[105];
     messageBlockOne[99] = messageBlockOne[88] | messageBlockOne[115];
     messageBlockOne[100] = messageBlockOne[63] | messageBlockOne[128];
@@ -281,6 +290,9 @@ void firstBlockMutationFour() {
     messageBlockOne[112] = messageBlockOne[125] ^ messageBlockOne[104];
     messageBlockOne[113] = messageBlockOne[64] & messageBlockOne[127];
     messageBlockOne[114] = messageBlockOne[89] | messageBlockOne[116];
+};
+
+void firstBlockMutationEight() {
     messageBlockOne[115] = messageBlockOne[14] | messageBlockOne[110];
     messageBlockOne[116] = messageBlockOne[62] ^ messageBlockOne[55];
     messageBlockOne[117] = messageBlockOne[106] ^ messageBlockOne[50];
@@ -294,7 +306,6 @@ void firstBlockMutationFour() {
     messageBlockOne[125] = messageBlockOne[66] | messageBlockOne[40];
     messageBlockOne[126] = messageBlockOne[39] | messageBlockOne[31];
     messageBlockOne[127] = messageBlockOne[15] | messageBlockOne[12];
-    reverse(messageBlockOne.begin(), messageBlockOne.end());
 };
 
 //secondBlock Mutation Series
@@ -440,7 +451,6 @@ void secondBlockMutationFour() {
 };
 
 //thirdBlock Mutation Series
-
 void thirdBlockMutation() {
     messageBlockThree[0] = messageBlockThree[5] & messageBlockThree[23];
     messageBlockThree[1] = messageBlockThree[1] & messageBlockThree[38];
@@ -784,7 +794,7 @@ void vectorToString() {
     //Clear white space
     completeMessageDigest.erase(remove_if(completeMessageDigest.begin(), completeMessageDigest.end(), ::isspace), completeMessageDigest.end());
     completeMessageDigest.resize(512);
-    cout << "binaryStringMessageDigest:" << endl << completeMessageDigest << endl;
+    cout << "messageDigest:" << endl << completeMessageDigest << endl;
 };
 };
 
@@ -809,10 +819,14 @@ int main() {
     newVector.printmessageDigest();
     newVector.divideMessageDigest();
      cout << endl << "Second Mutation Wave";
-    newVector.firstBlockMutation();
+    newVector.firstBlockMutationOne();
     newVector.firstBlockMutationTwo();
     newVector.firstBlockMutationThree();
     newVector.firstBlockMutationFour();
+    newVector.firstBlockMutationFive();
+    newVector.firstBlockMutationSix();
+    newVector.firstBlockMutationSeven();
+    newVector.firstBlockMutationEight();
     newVector.secondBlockMutation();
     newVector.secondBlockMutationTwo();
     newVector.secondBlockMutationThree();
