@@ -805,9 +805,10 @@ int main() {
     newVector.messageDigestTrim();
     newVector.firstMutation();
     newVector.messageDigestTrim();
-    cout << "Second Mutation: " << endl;
+    cout << "First Mutation Wave" << endl;
     newVector.printmessageDigest();
     newVector.divideMessageDigest();
+     cout << endl << "Second Mutation Wave";
     newVector.firstBlockMutation();
     newVector.firstBlockMutationTwo();
     newVector.firstBlockMutationThree();
