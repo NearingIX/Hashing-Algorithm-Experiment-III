@@ -60,6 +60,8 @@ class mainVector {
     string padValueString;
     vector<bitset<8> > firstBlock;
     vector<bitset<8> > secondBlock;
+    vector<bitset<8> > concatenateFirstBlock;
+    vector<bitset<8> > concatenateSecondBlock;
     vector<bitset<8> > messageBlockOne;
     vector<bitset<8> > messageBlockTwo;
     vector<bitset<8> > messageBlockThree;
@@ -75,6 +77,8 @@ class mainVector {
         string padValueString = "";
         vector<bitset<8> > firstBlock;
         vector<bitset<8> > secondBlock;
+        vector<bitset<8> > concatenateFirstBlock;
+        vector<bitset<8> > concatenateSecondBlock;
         vector<bitset<8> > messageBlockOne;
         vector<bitset<8> > messageBlockTwo;
         vector<bitset<8> > messageBlockThree;
@@ -148,148 +152,149 @@ messageBlockTwo = vector<bitset<8> > (firstBlock.begin() + firstBlock.size() / 2
 //Divide secondBlock
 messageBlockThree = vector<bitset<8> > (secondBlock.begin(), secondBlock.begin() + secondBlock.size() / 2);
 messageBlockFour = vector<bitset<8> > (secondBlock.begin() + secondBlock.size() / 2, secondBlock.end());
-
 };
 
 //firstBlock Mutation Series
 void firstBlockMutation() {
-    messageBlockOne[0] = messageBlockOne[10] ^ messageBlockOne[8];
-    messageBlockOne[1] = messageBlockOne[1] | messageBlockOne[72];
-    messageBlockOne[2] = messageBlockOne[2] & messageBlockOne[41];
-    messageBlockOne[3] = messageBlockOne[3] ^ messageBlockOne[58];
-    messageBlockOne[4] = messageBlockOne[4] & messageBlockOne[99];
-    messageBlockOne[5] = messageBlockOne[5] & messageBlockOne[47];
-    messageBlockOne[6] = messageBlockOne[6] & messageBlockOne[28];
-    messageBlockOne[7] = messageBlockOne[7] ^ messageBlockOne[76];
-    messageBlockOne[8] = messageBlockOne[8] | messageBlockOne[82];
-    messageBlockOne[9] = messageBlockOne[29] ^ messageBlockOne[91];
-    messageBlockOne[10] = messageBlockOne[0] ^ messageBlockOne[16];
-    messageBlockOne[11] = messageBlockOne[11] & messageBlockOne[71];
-    messageBlockOne[12] = messageBlockOne[12] | messageBlockOne[81];
-    messageBlockOne[13] = messageBlockOne[13] & messageBlockOne[108];
-    messageBlockOne[14] = messageBlockOne[14] ^ messageBlockOne[52];
-    messageBlockOne[15] = messageBlockOne[15] | messageBlockOne[26];
-    messageBlockOne[16] = messageBlockOne[16] ^ messageBlockOne[35];
-    messageBlockOne[17] = messageBlockOne[17] & messageBlockOne[74];
-    messageBlockOne[18] = messageBlockOne[18] ^ messageBlockOne[98];
-    messageBlockOne[19] = messageBlockOne[19] | messageBlockOne[121];
-    messageBlockOne[20] = messageBlockOne[20] ^ messageBlockOne[117];
-    messageBlockOne[21] = messageBlockOne[21] | messageBlockOne[73];
-    messageBlockOne[22] = messageBlockOne[22] & messageBlockOne[37];
-    messageBlockOne[23] = messageBlockOne[23] ^ messageBlockOne[123];
-    messageBlockOne[24] = messageBlockOne[24] ^ messageBlockOne[42];
-    messageBlockOne[25] = messageBlockOne[25] & messageBlockOne[6];
-    messageBlockOne[26] = messageBlockOne[26] ^ messageBlockOne[30];
-    messageBlockOne[27] = messageBlockOne[27] ^ messageBlockOne[119];
-    messageBlockOne[28] = messageBlockOne[28] | messageBlockOne[122];
-    messageBlockOne[29] = messageBlockOne[9] | messageBlockOne[118];
-    messageBlockOne[30] = messageBlockOne[30] & messageBlockOne[92];
-    messageBlockOne[31] = messageBlockOne[31] & messageBlockOne[57];
+    messageBlockOne[0] = messageBlockOne[29] ^ messageBlockOne[8];
+    messageBlockOne[1] = messageBlockOne[13] | messageBlockOne[72];
+    messageBlockOne[2] = messageBlockOne[68] & messageBlockOne[41];
+    messageBlockOne[3] = messageBlockOne[83] ^ messageBlockOne[58];
+    messageBlockOne[4] = messageBlockOne[121] & messageBlockOne[99];
+    messageBlockOne[5] = messageBlockOne[76] & messageBlockOne[47];
+    messageBlockOne[6] = messageBlockOne[55] & messageBlockOne[28];
+    messageBlockOne[7] = messageBlockOne[116] ^ messageBlockOne[76];
+    messageBlockOne[8] = messageBlockOne[4] | messageBlockOne[82];
+    messageBlockOne[9] = messageBlockOne[110] ^ messageBlockOne[91];
+    messageBlockOne[10] = messageBlockOne[47] ^ messageBlockOne[16];
+    messageBlockOne[11] = messageBlockOne[98] & messageBlockOne[71];
+    messageBlockOne[12] = messageBlockOne[54] | messageBlockOne[81];
+    messageBlockOne[13] = messageBlockOne[113] & messageBlockOne[108];
+    messageBlockOne[14] = messageBlockOne[28] ^ messageBlockOne[52];
+    messageBlockOne[15] = messageBlockOne[67] | messageBlockOne[26];
+    messageBlockOne[16] = messageBlockOne[82] ^ messageBlockOne[35];
+    messageBlockOne[17] = messageBlockOne[119] & messageBlockOne[74];
+    messageBlockOne[18] = messageBlockOne[120] ^ messageBlockOne[98];
+    messageBlockOne[19] = messageBlockOne[3] | messageBlockOne[121];
+    messageBlockOne[20] = messageBlockOne[60] ^ messageBlockOne[117];
+    messageBlockOne[21] = messageBlockOne[36] | messageBlockOne[73];
+    messageBlockOne[22] = messageBlockOne[99] & messageBlockOne[37];
+    messageBlockOne[23] = messageBlockOne[100] ^ messageBlockOne[123];
+    messageBlockOne[24] = messageBlockOne[109] ^ messageBlockOne[42];
+    messageBlockOne[25] = messageBlockOne[111] & messageBlockOne[6];
+    messageBlockOne[26] = messageBlockOne[56] ^ messageBlockOne[30];
+    messageBlockOne[27] = messageBlockOne[11] ^ messageBlockOne[119];
+    messageBlockOne[28] = messageBlockOne[117] | messageBlockOne[122];
+    messageBlockOne[29] = messageBlockOne[122] | messageBlockOne[118];
+    messageBlockOne[30] = messageBlockOne[84] & messageBlockOne[92];
+    messageBlockOne[31] = messageBlockOne[48] & messageBlockOne[57];
 };
 
 void firstBlockMutationTwo() {
-    messageBlockOne[32] = messageBlockOne[32] | messageBlockOne[46];
-    messageBlockOne[33] = messageBlockOne[33] | messageBlockOne[34];
-    messageBlockOne[34] = messageBlockOne[34] & messageBlockOne[7];
-    messageBlockOne[35] = messageBlockOne[35] | messageBlockOne[15];
-    messageBlockOne[36] = messageBlockOne[36] | messageBlockOne[80];
-    messageBlockOne[37] = messageBlockOne[37] ^ messageBlockOne[90];
-    messageBlockOne[38] = messageBlockOne[38] & messageBlockOne[126];
-    messageBlockOne[39] = messageBlockOne[39] | messageBlockOne[124];
-    messageBlockOne[40] = messageBlockOne[40] ^ messageBlockOne[56];
-    messageBlockOne[41] = messageBlockOne[41] ^ messageBlockOne[61];
-    messageBlockOne[42] = messageBlockOne[42] ^ messageBlockOne[59];
-    messageBlockOne[43] = messageBlockOne[43] | messageBlockOne[27];
-    messageBlockOne[44] = messageBlockOne[44] & messageBlockOne[83];
-    messageBlockOne[45] = messageBlockOne[45] & messageBlockOne[107];
-    messageBlockOne[46] = messageBlockOne[46] ^ messageBlockOne[48];
-    messageBlockOne[47] = messageBlockOne[47] & messageBlockOne[100];
-    messageBlockOne[48] = messageBlockOne[48] ^ messageBlockOne[53];
-    messageBlockOne[49] = messageBlockOne[49] | messageBlockOne[84];
-    messageBlockOne[50] = messageBlockOne[50] | messageBlockOne[17];
-    messageBlockOne[51] = messageBlockOne[51] ^ messageBlockOne[5];
-    messageBlockOne[52] = messageBlockOne[52] ^ messageBlockOne[36];
-    messageBlockOne[53] = messageBlockOne[53] | messageBlockOne[19];
-    messageBlockOne[54] = messageBlockOne[54] | messageBlockOne[10];
-    messageBlockOne[55] = messageBlockOne[55] | messageBlockOne[29];
-    messageBlockOne[56] = messageBlockOne[56] & messageBlockOne[38];
-    messageBlockOne[57] = messageBlockOne[57] | messageBlockOne[75];
-    messageBlockOne[58] = messageBlockOne[58] ^ messageBlockOne[79];
-    messageBlockOne[59] = messageBlockOne[59] ^ messageBlockOne[9];
-    messageBlockOne[60] = messageBlockOne[60] & messageBlockOne[68];
-    messageBlockOne[61] = messageBlockOne[61] & messageBlockOne[62];
-    messageBlockOne[62] = messageBlockOne[62] & messageBlockOne[33];
-    messageBlockOne[63] = messageBlockOne[63] ^ messageBlockOne[18];
-    messageBlockOne[64] = messageBlockOne[64] & messageBlockOne[4];
+    messageBlockOne[32] = messageBlockOne[2] | messageBlockOne[46];
+    messageBlockOne[33] = messageBlockOne[27] | messageBlockOne[34];
+    messageBlockOne[34] = messageBlockOne[118] & messageBlockOne[7];
+    messageBlockOne[35] = messageBlockOne[75] | messageBlockOne[15];
+    messageBlockOne[36] = messageBlockOne[19] | messageBlockOne[80];
+    messageBlockOne[37] = messageBlockOne[42] ^ messageBlockOne[90];
+    messageBlockOne[38] = messageBlockOne[115] & messageBlockOne[126];
+    messageBlockOne[39] = messageBlockOne[57] | messageBlockOne[124];
+    messageBlockOne[40] = messageBlockOne[35] ^ messageBlockOne[56];
+    messageBlockOne[41] = messageBlockOne[10] ^ messageBlockOne[61];
+    messageBlockOne[42] = messageBlockOne[53] ^ messageBlockOne[59];
+    messageBlockOne[43] = messageBlockOne[41] | messageBlockOne[27];
+    messageBlockOne[44] = messageBlockOne[59] & messageBlockOne[83];
+    messageBlockOne[45] = messageBlockOne[9] & messageBlockOne[107];
+    messageBlockOne[46] = messageBlockOne[81] ^ messageBlockOne[48];
+    messageBlockOne[47] = messageBlockOne[97] & messageBlockOne[100];
+    messageBlockOne[48] = messageBlockOne[32] ^ messageBlockOne[53];
+    messageBlockOne[49] = messageBlockOne[26] | messageBlockOne[84];
+    messageBlockOne[50] = messageBlockOne[46] | messageBlockOne[17];
+    messageBlockOne[51] = messageBlockOne[101] ^ messageBlockOne[5];
+    messageBlockOne[52] = messageBlockOne[85] ^ messageBlockOne[36];
+    messageBlockOne[53] = messageBlockOne[74] | messageBlockOne[19];
+    messageBlockOne[54] = messageBlockOne[49] | messageBlockOne[10];
+    messageBlockOne[55] = messageBlockOne[31] | messageBlockOne[29];
+    messageBlockOne[56] = messageBlockOne[108] & messageBlockOne[38];
+    messageBlockOne[57] = messageBlockOne[112] | messageBlockOne[75];
+    messageBlockOne[58] = messageBlockOne[30] ^ messageBlockOne[79];
+    messageBlockOne[59] = messageBlockOne[5] ^ messageBlockOne[9];
+    messageBlockOne[60] = messageBlockOne[124] & messageBlockOne[68];
+    messageBlockOne[61] = messageBlockOne[77] & messageBlockOne[62];
+    messageBlockOne[62] = messageBlockOne[58] & messageBlockOne[33];
+    messageBlockOne[63] = messageBlockOne[12] ^ messageBlockOne[18];
+    messageBlockOne[64] = messageBlockOne[8] & messageBlockOne[4];
+    reverse(messageBlockOne.begin(), messageBlockOne.end());
 };
 
 void firstBlockMutationThree() {
-    messageBlockOne[65] = messageBlockOne[65] | messageBlockOne[70];
-    messageBlockOne[66] = messageBlockOne[66] & messageBlockOne[69];
-    messageBlockOne[67] = messageBlockOne[67] & messageBlockOne[93];
-    messageBlockOne[68] = messageBlockOne[68] | messageBlockOne[97];
-    messageBlockOne[69] = messageBlockOne[69] ^ messageBlockOne[112];
-    messageBlockOne[70] = messageBlockOne[70] & messageBlockOne[89];
-    messageBlockOne[71] = messageBlockOne[71] ^ messageBlockOne[24];
-    messageBlockOne[72] = messageBlockOne[72] & messageBlockOne[14];
-    messageBlockOne[73] = messageBlockOne[73] | messageBlockOne[111];
-    messageBlockOne[74] = messageBlockOne[74] & messageBlockOne[125];
-    messageBlockOne[75] = messageBlockOne[75] ^ messageBlockOne[67];
-    messageBlockOne[76] = messageBlockOne[76] | messageBlockOne[51];
-    messageBlockOne[77] = messageBlockOne[77] ^ messageBlockOne[78];
-    messageBlockOne[78] = messageBlockOne[78] & messageBlockOne[120];
-    messageBlockOne[79] = messageBlockOne[79] ^ messageBlockOne[113];
-    messageBlockOne[80] = messageBlockOne[80] ^ messageBlockOne[23];
-    messageBlockOne[81] = messageBlockOne[81] | messageBlockOne[25];
-    messageBlockOne[82] = messageBlockOne[82] | messageBlockOne[63];
-    messageBlockOne[83] = messageBlockOne[83] & messageBlockOne[49];
-    messageBlockOne[84] = messageBlockOne[84] ^ messageBlockOne[85];
-    messageBlockOne[85] = messageBlockOne[85] | messageBlockOne[106];
-    messageBlockOne[86] = messageBlockOne[86] | messageBlockOne[54];
-    messageBlockOne[87] = messageBlockOne[87] ^ messageBlockOne[20];
-    messageBlockOne[88] = messageBlockOne[88] & messageBlockOne[11];
-    messageBlockOne[89] = messageBlockOne[89] & messageBlockOne[77];
-    messageBlockOne[90] = messageBlockOne[90] ^ messageBlockOne[109];
-    messageBlockOne[91] = messageBlockOne[91] | messageBlockOne[94];
-    messageBlockOne[92] = messageBlockOne[92] | messageBlockOne[2];
-    messageBlockOne[93] = messageBlockOne[93] ^ messageBlockOne[43];
+    messageBlockOne[65] = messageBlockOne[25] | messageBlockOne[70];
+    messageBlockOne[66] = messageBlockOne[86] & messageBlockOne[69];
+    messageBlockOne[67] = messageBlockOne[52] & messageBlockOne[93];
+    messageBlockOne[68] = messageBlockOne[96] | messageBlockOne[97];
+    messageBlockOne[69] = messageBlockOne[40] ^ messageBlockOne[112];
+    messageBlockOne[70] = messageBlockOne[16] & messageBlockOne[89];
+    messageBlockOne[71] = messageBlockOne[91] ^ messageBlockOne[24];
+    messageBlockOne[72] = messageBlockOne[80] & messageBlockOne[14];
+    messageBlockOne[73] = messageBlockOne[65] | messageBlockOne[111];
+    messageBlockOne[74] = messageBlockOne[102] & messageBlockOne[125];
+    messageBlockOne[75] = messageBlockOne[20] ^ messageBlockOne[67];
+    messageBlockOne[76] = messageBlockOne[107] | messageBlockOne[51];
+    messageBlockOne[77] = messageBlockOne[33] ^ messageBlockOne[78];
+    messageBlockOne[78] = messageBlockOne[95] & messageBlockOne[120];
+    messageBlockOne[79] = messageBlockOne[123] ^ messageBlockOne[113];
+    messageBlockOne[80] = messageBlockOne[22] ^ messageBlockOne[23];
+    messageBlockOne[81] = messageBlockOne[114] | messageBlockOne[25];
+    messageBlockOne[82] = messageBlockOne[37] | messageBlockOne[63];
+    messageBlockOne[83] = messageBlockOne[50] & messageBlockOne[49];
+    messageBlockOne[84] = messageBlockOne[87] ^ messageBlockOne[85];
+    messageBlockOne[85] = messageBlockOne[103] | messageBlockOne[106];
+    messageBlockOne[86] = messageBlockOne[43] | messageBlockOne[54];
+    messageBlockOne[87] = messageBlockOne[92] ^ messageBlockOne[20];
+    messageBlockOne[88] = messageBlockOne[73] & messageBlockOne[11];
+    messageBlockOne[89] = messageBlockOne[69] & messageBlockOne[77];
+    messageBlockOne[90] = messageBlockOne[51] ^ messageBlockOne[109];
+    messageBlockOne[91] = messageBlockOne[17] | messageBlockOne[94];
+    messageBlockOne[92] = messageBlockOne[21] | messageBlockOne[2];
+    messageBlockOne[93] = messageBlockOne[61] ^ messageBlockOne[43];
     messageBlockOne[94] = messageBlockOne[94] & messageBlockOne[101];
-    messageBlockOne[95] = messageBlockOne[95] ^ messageBlockOne[86];
-    messageBlockOne[96] = messageBlockOne[96] ^ messageBlockOne[66];
-    messageBlockOne[97] = messageBlockOne[97] | messageBlockOne[32]; 
+    messageBlockOne[95] = messageBlockOne[34] ^ messageBlockOne[86];
+    messageBlockOne[96] = messageBlockOne[6] ^ messageBlockOne[66];
+    messageBlockOne[97] = messageBlockOne[18] | messageBlockOne[32]; 
 };
 
 void firstBlockMutationFour() {
-    messageBlockOne[98] = messageBlockOne[98] ^ messageBlockOne[105];
-    messageBlockOne[99] = messageBlockOne[99] | messageBlockOne[115];
-    messageBlockOne[100] = messageBlockOne[100] | messageBlockOne[128];
-    messageBlockOne[101] = messageBlockOne[101] ^ messageBlockOne[114];
-    messageBlockOne[102] = messageBlockOne[102] & messageBlockOne[87];
-    messageBlockOne[103] = messageBlockOne[103] & messageBlockOne[13];
-    messageBlockOne[104] = messageBlockOne[104] ^ messageBlockOne[95];
-    messageBlockOne[105] = messageBlockOne[105] | messageBlockOne[60];
-    messageBlockOne[106] = messageBlockOne[106] ^ messageBlockOne[3];
-    messageBlockOne[107] = messageBlockOne[107] | messageBlockOne[102];
-    messageBlockOne[108] = messageBlockOne[108] ^ messageBlockOne[45];
-    messageBlockOne[109] = messageBlockOne[109] & messageBlockOne[39];
-    messageBlockOne[110] = messageBlockOne[110] ^ messageBlockOne[44];
-    messageBlockOne[111] = messageBlockOne[111] & messageBlockOne[65];
-    messageBlockOne[112] = messageBlockOne[112] ^ messageBlockOne[104];
-    messageBlockOne[113] = messageBlockOne[113] & messageBlockOne[127];
-    messageBlockOne[114] = messageBlockOne[114] | messageBlockOne[116];
-    messageBlockOne[115] = messageBlockOne[115] | messageBlockOne[110];
-    messageBlockOne[116] = messageBlockOne[116] ^ messageBlockOne[55];
-    messageBlockOne[117] = messageBlockOne[117] ^ messageBlockOne[50];
-    messageBlockOne[118] = messageBlockOne[118] ^ messageBlockOne[21];
-    messageBlockOne[119] = messageBlockOne[119] & messageBlockOne[103];
-    messageBlockOne[120] = messageBlockOne[120] & messageBlockOne[88];
-    messageBlockOne[121] = messageBlockOne[121] ^ messageBlockOne[1];
-    messageBlockOne[122] = messageBlockOne[122] & messageBlockOne[22];
-    messageBlockOne[123] = messageBlockOne[123] ^ messageBlockOne[96];
-    messageBlockOne[124] = messageBlockOne[124] ^ messageBlockOne[64];
-    messageBlockOne[125] = messageBlockOne[125] | messageBlockOne[40];
-    messageBlockOne[126] = messageBlockOne[126] | messageBlockOne[31];
-    messageBlockOne[127] = messageBlockOne[127] | messageBlockOne[12];
+    messageBlockOne[98] = messageBlockOne[24] ^ messageBlockOne[105];
+    messageBlockOne[99] = messageBlockOne[88] | messageBlockOne[115];
+    messageBlockOne[100] = messageBlockOne[63] | messageBlockOne[128];
+    messageBlockOne[101] = messageBlockOne[104] ^ messageBlockOne[114];
+    messageBlockOne[102] = messageBlockOne[128] & messageBlockOne[87];
+    messageBlockOne[103] = messageBlockOne[72] & messageBlockOne[13];
+    messageBlockOne[104] = messageBlockOne[7] ^ messageBlockOne[95];
+    messageBlockOne[105] = messageBlockOne[127] | messageBlockOne[60];
+    messageBlockOne[106] = messageBlockOne[126] ^ messageBlockOne[3];
+    messageBlockOne[107] = messageBlockOne[70] | messageBlockOne[102];
+    messageBlockOne[108] = messageBlockOne[23] ^ messageBlockOne[45];
+    messageBlockOne[109] = messageBlockOne[44] & messageBlockOne[39];
+    messageBlockOne[110] = messageBlockOne[38] ^ messageBlockOne[44];
+    messageBlockOne[111] = messageBlockOne[78] & messageBlockOne[65];
+    messageBlockOne[112] = messageBlockOne[125] ^ messageBlockOne[104];
+    messageBlockOne[113] = messageBlockOne[64] & messageBlockOne[127];
+    messageBlockOne[114] = messageBlockOne[89] | messageBlockOne[116];
+    messageBlockOne[115] = messageBlockOne[14] | messageBlockOne[110];
+    messageBlockOne[116] = messageBlockOne[62] ^ messageBlockOne[55];
+    messageBlockOne[117] = messageBlockOne[106] ^ messageBlockOne[50];
+    messageBlockOne[118] = messageBlockOne[1] ^ messageBlockOne[21];
+    messageBlockOne[119] = messageBlockOne[90] & messageBlockOne[103];
+    messageBlockOne[120] = messageBlockOne[105] & messageBlockOne[88];
+    messageBlockOne[121] = messageBlockOne[93] ^ messageBlockOne[1];
+    messageBlockOne[122] = messageBlockOne[79] & messageBlockOne[22];
+    messageBlockOne[123] = messageBlockOne[45] ^ messageBlockOne[96];
+    messageBlockOne[124] = messageBlockOne[71] ^ messageBlockOne[64];
+    messageBlockOne[125] = messageBlockOne[66] | messageBlockOne[40];
+    messageBlockOne[126] = messageBlockOne[39] | messageBlockOne[31];
+    messageBlockOne[127] = messageBlockOne[15] | messageBlockOne[12];
+    reverse(messageBlockOne.begin(), messageBlockOne.end());
 };
 
 //secondBlock Mutation Series
@@ -362,6 +367,7 @@ void secondBlockMutationTwo() {
     messageBlockTwo[62] = messageBlockTwo[62] | messageBlockTwo[91];
     messageBlockTwo[63] = messageBlockTwo[63] & messageBlockTwo[84];
     messageBlockTwo[64] = messageBlockTwo[64] & messageBlockTwo[60];
+    reverse(messageBlockTwo.begin(), messageBlockTwo.end());
 };
 
 void secondBlockMutationThree() {
@@ -443,7 +449,7 @@ void thirdBlockMutation() {
     messageBlockThree[4] = messageBlockThree[4] ^ messageBlockThree[116];
     messageBlockThree[5] = messageBlockThree[0] | messageBlockThree[125];
     messageBlockThree[6] = messageBlockThree[6] ^ messageBlockThree[110];
-    messageBlockThree[7] = messageBlockThree[7] | messageBlockThree[9];
+    messageBlockThree[7] = messageBlockThree[17] | messageBlockThree[9];
     messageBlockThree[8] = messageBlockThree[8] | messageBlockThree[59];
     messageBlockThree[9] = messageBlockThree[9] ^ messageBlockThree[86];
     messageBlockThree[10] = messageBlockThree[10] | messageBlockThree[66];
@@ -453,7 +459,7 @@ void thirdBlockMutation() {
     messageBlockThree[14] = messageBlockThree[14] & messageBlockThree[56];
     messageBlockThree[15] = messageBlockThree[15] & messageBlockThree[60];
     messageBlockThree[16] = messageBlockThree[16] ^ messageBlockThree[117];
-    messageBlockThree[17] = messageBlockThree[17] | messageBlockThree[124];
+    messageBlockThree[17] = messageBlockThree[7] | messageBlockThree[124];
     messageBlockThree[18] = messageBlockThree[18] | messageBlockThree[10];
     messageBlockThree[19] = messageBlockThree[19] ^ messageBlockThree[22];
     messageBlockThree[20] = messageBlockThree[20] | messageBlockThree[123];
@@ -468,6 +474,7 @@ void thirdBlockMutation() {
     messageBlockThree[29] = messageBlockThree[29] ^ messageBlockThree[66];
     messageBlockThree[30] = messageBlockThree[30] ^ messageBlockThree[24];
     messageBlockThree[31] = messageBlockThree[31] & messageBlockThree[1];
+    reverse(messageBlockThree.begin(), messageBlockThree.end());
 };
 
 void thirdBlockMutationTwo() {
@@ -539,7 +546,7 @@ void thirdBlockMutationThree() {
     messageBlockThree[94] = messageBlockThree[94] | messageBlockThree[79];
     messageBlockThree[95] = messageBlockThree[95] | messageBlockThree[3];
     messageBlockThree[96] = messageBlockThree[96] & messageBlockThree[49];
-    messageBlockThree[97] = messageBlockThree[97] & messageBlockThree[41]; 
+    messageBlockThree[97] = messageBlockThree[97] & messageBlockThree[41];
 };
 
 void thirdBlockMutationFour() {
@@ -609,6 +616,7 @@ void forthBlockMutation() {
     messageBlockFour[29] = messageBlockFour[29] | messageBlockFour[64];
     messageBlockFour[30] = messageBlockFour[30] ^ messageBlockFour[44];
     messageBlockFour[31] = messageBlockFour[31] & messageBlockFour[1];
+    reverse(messageBlockFour.begin(), messageBlockFour.end());
 };
 
 void forthBlockMutationTwo() {
@@ -736,22 +744,22 @@ for (auto i: messageBlockFour) {
 };
 
 void concatenateMessageBlocks() {
-firstBlock.reserve(messageBlockOne.size() + messageBlockTwo.size());
-firstBlock.insert(firstBlock.end(), messageBlockOne.begin(), messageBlockOne.end());
-firstBlock.insert(firstBlock.end(), messageBlockTwo.begin(), messageBlockTwo.end());
+concatenateFirstBlock.reserve(messageBlockOne.size() + messageBlockTwo.size());
+concatenateFirstBlock.insert(concatenateFirstBlock.end(), messageBlockOne.begin(), messageBlockOne.end());
+concatenateFirstBlock.insert(concatenateFirstBlock.end(), messageBlockTwo.begin(), messageBlockTwo.end());
 
-secondBlock.reserve(messageBlockThree.size() + messageBlockFour.size());
-secondBlock.insert(secondBlock.end(), messageBlockThree.begin(), messageBlockThree.end());
-secondBlock.insert(secondBlock.end(), messageBlockFour.begin(), messageBlockFour.end());
+concatenateSecondBlock.reserve(messageBlockThree.size() + messageBlockFour.size());
+concatenateSecondBlock.insert(concatenateSecondBlock.end(), messageBlockThree.begin(), messageBlockThree.end());
+concatenateSecondBlock.insert(concatenateSecondBlock.end(), messageBlockFour.begin(), messageBlockFour.end());
 
-finalMessageDigest.reserve(firstBlock.size() + secondBlock.size());
-finalMessageDigest.insert(finalMessageDigest.end(), firstBlock.begin(), firstBlock.end());
-finalMessageDigest.insert(finalMessageDigest.end(), secondBlock.begin(), secondBlock.end());
+finalMessageDigest.reserve(concatenateFirstBlock.size() + concatenateSecondBlock.size());
+finalMessageDigest.insert(finalMessageDigest.end(), concatenateFirstBlock.begin(), concatenateFirstBlock.end());
+finalMessageDigest.insert(finalMessageDigest.end(), concatenateSecondBlock.begin(), concatenateSecondBlock.end());
 };
 
 //Convert any leading ones to zeroes
 void alterLeadingZero() {
-for (auto i: messageDigest) {
+for (auto i: finalMessageDigest) {
     i |= 0 << 7;
 };
 };
@@ -772,9 +780,10 @@ void vectorToString() {
         completeMessageDigest += c;
     };
     //Remove leading uniform characters
-    completeMessageDigest.erase(0,7);
+    completeMessageDigest.erase(0,8);
     //Clear white space
     completeMessageDigest.erase(remove_if(completeMessageDigest.begin(), completeMessageDigest.end(), ::isspace), completeMessageDigest.end());
+    completeMessageDigest.resize(512);
     cout << "binaryStringMessageDigest:" << endl << completeMessageDigest << endl;
 };
 };
@@ -818,8 +827,6 @@ int main() {
     newVector.printMessageBlocks();
     newVector.concatenateMessageBlocks();
     newVector.alterLeadingZero();
-    cout << endl << "Final Message " << endl;
-    newVector.printmessageDigest();
     cout << endl;
     newVector.messageDigestSize();
     newVector.vectorToString();
