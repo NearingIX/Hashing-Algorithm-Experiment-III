@@ -459,7 +459,7 @@ void secondBlockMutationEight() {
 };
 
 //thirdBlock Mutation Series
-void thirdBlockMutation() {
+void thirdBlockMutationOne() {
     messageBlockThree[0] = messageBlockThree[5] & messageBlockThree[23];
     messageBlockThree[1] = messageBlockThree[1] & messageBlockThree[38];
     messageBlockThree[2] = messageBlockThree[2] | messageBlockThree[55];
@@ -476,6 +476,9 @@ void thirdBlockMutation() {
     messageBlockThree[13] = messageBlockThree[13] & messageBlockThree[34];
     messageBlockThree[14] = messageBlockThree[14] & messageBlockThree[56];
     messageBlockThree[15] = messageBlockThree[15] & messageBlockThree[60];
+};
+
+void thirdBlockMutationTwo() { 
     messageBlockThree[16] = messageBlockThree[16] ^ messageBlockThree[117];
     messageBlockThree[17] = messageBlockThree[7] | messageBlockThree[124];
     messageBlockThree[18] = messageBlockThree[18] | messageBlockThree[10];
@@ -492,10 +495,9 @@ void thirdBlockMutation() {
     messageBlockThree[29] = messageBlockThree[29] ^ messageBlockThree[66];
     messageBlockThree[30] = messageBlockThree[30] ^ messageBlockThree[24];
     messageBlockThree[31] = messageBlockThree[31] & messageBlockThree[1];
-    reverse(messageBlockThree.begin(), messageBlockThree.end());
 };
 
-void thirdBlockMutationTwo() {
+void thirdBlockMutationThree() {
     messageBlockThree[32] = messageBlockThree[32] & messageBlockThree[39];
     messageBlockThree[33] = messageBlockThree[33] & messageBlockThree[35];
     messageBlockThree[34] = messageBlockThree[34] & messageBlockThree[76];
@@ -513,6 +515,9 @@ void thirdBlockMutationTwo() {
     messageBlockThree[46] = messageBlockThree[46] | messageBlockThree[57];
     messageBlockThree[47] = messageBlockThree[47] | messageBlockThree[100];
     messageBlockThree[48] = messageBlockThree[48] ^ messageBlockThree[112];
+};
+
+void thirdBlockMutationFour() {
     messageBlockThree[49] = messageBlockThree[49] & messageBlockThree[107];
     messageBlockThree[50] = messageBlockThree[50] ^ messageBlockThree[75];
     messageBlockThree[51] = messageBlockThree[51] & messageBlockThree[53];
@@ -531,7 +536,7 @@ void thirdBlockMutationTwo() {
     messageBlockThree[64] = messageBlockThree[64] ^ messageBlockThree[2];
 };
 
-void thirdBlockMutationThree() {
+void thirdBlockMutationFive() {
     messageBlockThree[65] = messageBlockThree[65] | messageBlockThree[19];
     messageBlockThree[66] = messageBlockThree[66] | messageBlockThree[20];
     messageBlockThree[67] = messageBlockThree[67] ^ messageBlockThree[30];
@@ -549,6 +554,9 @@ void thirdBlockMutationThree() {
     messageBlockThree[79] = messageBlockThree[79] & messageBlockThree[46];
     messageBlockThree[80] = messageBlockThree[80] ^ messageBlockThree[69];
     messageBlockThree[81] = messageBlockThree[81] & messageBlockThree[105];
+};
+
+void thirdBlockMutationSix() {
     messageBlockThree[82] = messageBlockThree[82] ^ messageBlockThree[93];
     messageBlockThree[83] = messageBlockThree[83] & messageBlockThree[25];
     messageBlockThree[84] = messageBlockThree[84] | messageBlockThree[18];
@@ -567,7 +575,7 @@ void thirdBlockMutationThree() {
     messageBlockThree[97] = messageBlockThree[97] & messageBlockThree[41];
 };
 
-void thirdBlockMutationFour() {
+void thirdBlockMutationSeven() {
     messageBlockThree[98] = messageBlockThree[98] ^ messageBlockThree[7];
     messageBlockThree[99] = messageBlockThree[99] ^ messageBlockThree[65];
     messageBlockThree[100] = messageBlockThree[100] | messageBlockThree[72];
@@ -585,6 +593,9 @@ void thirdBlockMutationFour() {
     messageBlockThree[112] = messageBlockThree[112] ^ messageBlockThree[6];
     messageBlockThree[113] = messageBlockThree[113] & messageBlockThree[126];
     messageBlockThree[114] = messageBlockThree[114] ^ messageBlockThree[104];
+};
+
+void thirdBlockMutationEight() {
     messageBlockThree[115] = messageBlockThree[115] | messageBlockThree[80];
     messageBlockThree[116] = messageBlockThree[116] | messageBlockThree[96];
     messageBlockThree[117] = messageBlockThree[117] & messageBlockThree[43];
@@ -802,7 +813,7 @@ void vectorToString() {
     completeMessageDigest.erase(0,8);
     //Clear white space
     completeMessageDigest.erase(remove_if(completeMessageDigest.begin(), completeMessageDigest.end(), ::isspace), completeMessageDigest.end());
-    //completeMessageDigest.resize(512);
+    completeMessageDigest.resize(512);
     cout << "messageDigest:" << endl << completeMessageDigest << endl;
 };
 };
@@ -844,10 +855,14 @@ int main() {
     newVector.secondBlockMutationSix();
     newVector.secondBlockMutationSeven();
     newVector.secondBlockMutationEight();
-    newVector.thirdBlockMutation();
+    newVector.thirdBlockMutationOne();
     newVector.thirdBlockMutationTwo();
     newVector.thirdBlockMutationThree();
     newVector.thirdBlockMutationFour();
+    newVector.thirdBlockMutationFive();
+    newVector.thirdBlockMutationSix();
+    newVector.thirdBlockMutationSeven();
+    newVector.thirdBlockMutationEight();
     newVector.forthBlockMutation();
     newVector.forthBlockMutationTwo();
     newVector.forthBlockMutationThree();
