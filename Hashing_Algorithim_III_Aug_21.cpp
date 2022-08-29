@@ -612,7 +612,7 @@ void thirdBlockMutationEight() {
 };
 
 //fourthBlock Mutation Series
-void forthBlockMutation() {
+void forthBlockMutationOne() {
     messageBlockFour[0] = messageBlockFour[0] & messageBlockFour[47];
     messageBlockFour[1] = messageBlockFour[1] | messageBlockFour[55];
     messageBlockFour[2] = messageBlockFour[2] & messageBlockFour[24];
@@ -629,6 +629,9 @@ void forthBlockMutation() {
     messageBlockFour[13] = messageBlockFour[13] | messageBlockFour[54];
     messageBlockFour[14] = messageBlockFour[14] ^ messageBlockFour[74];
     messageBlockFour[15] = messageBlockFour[15] & messageBlockFour[116];
+};
+
+void forthBlockMutationTwo() {
     messageBlockFour[16] = messageBlockFour[16] ^ messageBlockFour[23];
     messageBlockFour[17] = messageBlockFour[17] | messageBlockFour[97];
     messageBlockFour[18] = messageBlockFour[18] ^ messageBlockFour[117];
@@ -645,10 +648,9 @@ void forthBlockMutation() {
     messageBlockFour[29] = messageBlockFour[29] | messageBlockFour[64];
     messageBlockFour[30] = messageBlockFour[30] ^ messageBlockFour[44];
     messageBlockFour[31] = messageBlockFour[31] & messageBlockFour[1];
-    reverse(messageBlockFour.begin(), messageBlockFour.end());
 };
 
-void forthBlockMutationTwo() {
+void forthBlockMutationThree() {
     messageBlockFour[32] = messageBlockFour[32] | messageBlockFour[14];
     messageBlockFour[33] = messageBlockFour[33] ^ messageBlockFour[83];
     messageBlockFour[34] = messageBlockFour[34] ^ messageBlockFour[105];
@@ -666,6 +668,9 @@ void forthBlockMutationTwo() {
     messageBlockFour[46] = messageBlockFour[46] & messageBlockFour[106];
     messageBlockFour[47] = messageBlockFour[47] ^ messageBlockFour[43];
     messageBlockFour[48] = messageBlockFour[48] | messageBlockFour[63];
+};
+
+void forthBlockMutationFour() {
     messageBlockFour[49] = messageBlockFour[49] ^ messageBlockFour[82];
     messageBlockFour[50] = messageBlockFour[50] | messageBlockFour[72];
     messageBlockFour[51] = messageBlockFour[51] ^ messageBlockFour[31];
@@ -684,7 +689,7 @@ void forthBlockMutationTwo() {
     messageBlockFour[64] = messageBlockFour[64] ^ messageBlockFour[16];
 };
 
-void forthBlockMutationThree() {
+void forthBlockMutationFive() {
     messageBlockFour[65] = messageBlockFour[65] & messageBlockFour[3];
     messageBlockFour[66] = messageBlockFour[66] | messageBlockFour[62];
     messageBlockFour[67] = messageBlockFour[67] & messageBlockFour[26];
@@ -702,6 +707,9 @@ void forthBlockMutationThree() {
     messageBlockFour[79] = messageBlockFour[79] & messageBlockFour[100];
     messageBlockFour[80] = messageBlockFour[80] ^ messageBlockFour[112];
     messageBlockFour[81] = messageBlockFour[81] & messageBlockFour[66];
+};
+
+void forthBlockMutationSix() {
     messageBlockFour[82] = messageBlockFour[82] ^ messageBlockFour[30];
     messageBlockFour[83] = messageBlockFour[83] ^ messageBlockFour[61];
     messageBlockFour[84] = messageBlockFour[84] ^ messageBlockFour[103];
@@ -720,7 +728,7 @@ void forthBlockMutationThree() {
     messageBlockFour[97] = messageBlockFour[97] | messageBlockFour[40];
 };
 
-void forthBlockMutationFour() {
+void forthBlockMutationSeven() {
     messageBlockFour[98] = messageBlockFour[98] ^ messageBlockFour[89];
     messageBlockFour[99] = messageBlockFour[99] | messageBlockFour[101];
     messageBlockFour[100] = messageBlockFour[100] ^ messageBlockFour[60];
@@ -738,6 +746,9 @@ void forthBlockMutationFour() {
     messageBlockFour[112] = messageBlockFour[112] & messageBlockFour[17];
     messageBlockFour[113] = messageBlockFour[113] | messageBlockFour[121];
     messageBlockFour[114] = messageBlockFour[114] ^ messageBlockFour[36];
+};
+
+void forthBlockMutationEight() {
     messageBlockFour[115] = messageBlockFour[115] ^ messageBlockFour[119];
     messageBlockFour[116] = messageBlockFour[116] ^ messageBlockFour[102];
     messageBlockFour[117] = messageBlockFour[117] ^ messageBlockFour[19];
@@ -863,10 +874,14 @@ int main() {
     newVector.thirdBlockMutationSix();
     newVector.thirdBlockMutationSeven();
     newVector.thirdBlockMutationEight();
-    newVector.forthBlockMutation();
+    newVector.forthBlockMutationOne();
     newVector.forthBlockMutationTwo();
     newVector.forthBlockMutationThree();
     newVector.forthBlockMutationFour();
+    newVector.forthBlockMutationFive();
+    newVector.forthBlockMutationSix();
+    newVector.forthBlockMutationSeven();
+    newVector.forthBlockMutationEight();
     newVector.printMessageBlocks();
     newVector.concatenateMessageBlocks();
     newVector.alterLeadingZero();
