@@ -88,7 +88,7 @@ class mainVector {
         stringstream messageStream;
         }
     
-    void padmessageDigest() {
+void padmessageDigest() {
     do {
         bitset<8> vectorPad = 01010101;
         messageDigest.push_back(vectorPad);
