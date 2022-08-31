@@ -811,7 +811,7 @@ void vectorToString() {
     for(size_t i=0; i < finalMessageDigest.size(); ++i){
         if (i != 0)
         messageStream << finalMessageDigest[i];
-    }
+    };
     string stringMessage = messageStream.str();
     //Convert binary to char
     stringstream sstream(stringMessage);
