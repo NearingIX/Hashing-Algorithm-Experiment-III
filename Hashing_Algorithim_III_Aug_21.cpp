@@ -327,7 +327,8 @@ void secondBlockMutationOne() {
     messageBlockTwo[14] = messageBlockTwo[106] | messageBlockTwo[4];
     messageBlockTwo[15] = messageBlockTwo[1] & messageBlockTwo[31];
 };
-    void secondBlockMutationTwo() {
+    
+void secondBlockMutationTwo() {
     messageBlockTwo[16] = messageBlockTwo[60] | messageBlockTwo[127];
     messageBlockTwo[17] = messageBlockTwo[88] & messageBlockTwo[115];
     messageBlockTwo[18] = messageBlockTwo[109] | messageBlockTwo[61];
