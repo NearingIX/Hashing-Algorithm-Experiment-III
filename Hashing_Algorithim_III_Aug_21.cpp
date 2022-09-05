@@ -327,7 +327,6 @@ void secondBlockMutationOne() {
     messageBlockTwo[14] = messageBlockTwo[106] | messageBlockTwo[4];
     messageBlockTwo[15] = messageBlockTwo[1] & messageBlockTwo[31];
 };
-
     void secondBlockMutationTwo() {
     messageBlockTwo[16] = messageBlockTwo[60] | messageBlockTwo[127];
     messageBlockTwo[17] = messageBlockTwo[88] & messageBlockTwo[115];
@@ -366,6 +365,7 @@ void secondBlockMutationThree() {
     messageBlockTwo[47] = messageBlockTwo[76] | messageBlockTwo[71];
     messageBlockTwo[48] = messageBlockTwo[41] ^ messageBlockTwo[67];
 };
+
 void secondBlockMutationFour() {
     messageBlockTwo[49] = messageBlockTwo[86] & messageBlockTwo[21];
     messageBlockTwo[50] = messageBlockTwo[91] | messageBlockTwo[109];
@@ -784,6 +784,7 @@ for (auto i: messageBlockFour) {
     };
 };
 
+
 void concatenateMessageBlocks() {
 concatenateFirstBlock.reserve(messageBlockOne.size() + messageBlockTwo.size());
 concatenateFirstBlock.insert(concatenateFirstBlock.end(), messageBlockOne.begin(), messageBlockOne.end());
@@ -821,8 +822,6 @@ void vectorToString() {
         char c = char(messageBytes.to_ulong());
         completeMessageDigest += c;
     };
-    //Remove leading uniform characters
-    completeMessageDigest.erase(0,8);
     //Clear white space
     completeMessageDigest.erase(remove_if(completeMessageDigest.begin(), completeMessageDigest.end(), ::isspace), completeMessageDigest.end());
     completeMessageDigest.resize(512);
