@@ -828,6 +828,7 @@ void vectorToString() {
     completeMessageDigest.erase(remove_if(completeMessageDigest.begin(), completeMessageDigest.end(), [](char c) {return !isalpha(c), !iswalnum(c);}), completeMessageDigest.end());
     completeMessageDigest.resize(256);
     cout << "messageDigest:" << endl << completeMessageDigest << endl;
+    cout << "messageLength:" << endl << completeMessageDigest.length() << endl;
 };
 };
 
