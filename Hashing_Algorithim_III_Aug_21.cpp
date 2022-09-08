@@ -888,5 +888,6 @@ int main() {
     cout << endl;
     newVector.messageDigestSize();
     newVector.vectorToString();
+    system("pause");
     return 0;
 };
