@@ -839,12 +839,7 @@ void vectorToString() {
     completeMessageDigest.erase(remove_if(completeMessageDigest.begin(), completeMessageDigest.end(), ::isspace), completeMessageDigest.end());
     completeMessageDigest.resize(512);
     cout << "messageDigest:" << endl << completeMessageDigest << endl;
-    cout << "Press any key to exit...";
 };
-void writeHashToFile() {
-    freopen("messageDigest.txt","w",stdout);
-    cout << "messageDigest:" << endl << completeMessageDigest << endl;
-}
 };
 
 int main() {
@@ -907,7 +902,7 @@ int main() {
     cout << endl;
     newVector.messageDigestSize();
     newVector.vectorToString();
-    newVector.writeHashToFile();
+    //Pause until keystroke
     system("pause");
     return 0;
 };
