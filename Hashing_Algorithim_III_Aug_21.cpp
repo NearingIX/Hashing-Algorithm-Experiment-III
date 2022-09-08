@@ -8,6 +8,7 @@
 #include <cmath>
 #include <iterator>
 #include <sstream>
+#include <cstdio>
 using namespace std;
 
 class message {
@@ -765,6 +766,18 @@ void forthBlockMutationEight() {
     messageBlockFour[127] = messageBlockFour[33] & messageBlockFour[4];
 };
 
+//Alter series of 00000000's
+//Not working as intended
+void mutateZeroSet() {
+for (auto i: messageBlockFour) {
+    bitset<8> setZero = 00000000;
+    bitset<8> setOne = 0111111111;
+    if (i == setZero) {
+        messageBlockFour.push_back(setOne);
+    };
+};
+};
+
 void printMessageBlocks() {
     cout << endl << "First messageBlock:" << endl;
 for (auto i: messageBlockOne) {
@@ -826,7 +839,12 @@ void vectorToString() {
     completeMessageDigest.erase(remove_if(completeMessageDigest.begin(), completeMessageDigest.end(), ::isspace), completeMessageDigest.end());
     completeMessageDigest.resize(512);
     cout << "messageDigest:" << endl << completeMessageDigest << endl;
+    cout << "Press any key to exit...";
 };
+void writeHashToFile() {
+    freopen("messageDigest.txt","w",stdout);
+    cout << "messageDigest:" << endl << completeMessageDigest << endl;
+}
 };
 
 int main() {
@@ -849,7 +867,7 @@ int main() {
     cout << "First Mutation Wave" << endl;
     newVector.printmessageDigest();
     newVector.divideMessageDigest();
-     cout << endl << "Second Mutation Wave";
+    cout << endl << "Second Mutation Wave";
     newVector.firstBlockMutationOne();
     newVector.firstBlockMutationTwo();
     newVector.firstBlockMutationThree();
@@ -882,12 +900,14 @@ int main() {
     newVector.forthBlockMutationSix();
     newVector.forthBlockMutationSeven();
     newVector.forthBlockMutationEight();
+    newVector.mutateZeroSet();
     newVector.printMessageBlocks();
     newVector.concatenateMessageBlocks();
     newVector.alterLeadingZero();
     cout << endl;
     newVector.messageDigestSize();
     newVector.vectorToString();
+    newVector.writeHashToFile();
     system("pause");
     return 0;
 };
