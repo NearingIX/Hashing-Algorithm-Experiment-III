@@ -835,9 +835,10 @@ void vectorToString() {
         char c = char(messageBytes.to_ulong());
         completeMessageDigest += c;
     };
-    //Clear white space
+    //Clear white space, remove none ASCII Characters and resize the hash
     completeMessageDigest.erase(remove_if(completeMessageDigest.begin(), completeMessageDigest.end(), ::isspace), completeMessageDigest.end());
-    completeMessageDigest.resize(512);
+    completeMessageDigest.erase(remove_if(completeMessageDigest.begin(), completeMessageDigest.end(), [](char c) {return !isalpha(c), !iswalnum(c);}), completeMessageDigest.end());
+    completeMessageDigest.resize(256);
     cout << "messageDigest:" << endl << completeMessageDigest << endl;
 };
 };
