@@ -766,18 +766,6 @@ void forthBlockMutationEight() {
     messageBlockFour[127] = messageBlockFour[33] & messageBlockFour[4];
 };
 
-//Alter series of 00000000's
-//Not working as intended
-void mutateZeroSet() {
-for (auto i: messageBlockFour) {
-    bitset<8> setZero = 00000000;
-    bitset<8> setOne = 0111111111;
-    if (i == setZero) {
-        messageBlockFour.push_back(setOne);
-    };
-};
-};
-
 void printMessageBlocks() {
     cout << endl << "First messageBlock:" << endl;
 for (auto i: messageBlockOne) {
@@ -896,7 +884,6 @@ int main() {
     newVector.forthBlockMutationSix();
     newVector.forthBlockMutationSeven();
     newVector.forthBlockMutationEight();
-    newVector.mutateZeroSet();
     newVector.printMessageBlocks();
     newVector.concatenateMessageBlocks();
     newVector.alterLeadingZero();
